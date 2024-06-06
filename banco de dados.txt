@@ -1,17 +1,23 @@
+CREATE DATABASE admin;
+
+USE admin;
+
+CREATE TABLE IF NOT EXISTS login (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100),
+    senha VARCHAR(100)
+);
+
 CREATE TABLE estado (
     id INT AUTO_INCREMENT PRIMARY KEY,
     UF VARCHAR(2) NOT NULL
 );
 
-
-
--- Criação da tabela marca
 CREATE TABLE marca (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_marca VARCHAR(100) NOT NULL
 );
 
--- Criação da tabela produto
 CREATE TABLE produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_produto VARCHAR(100) NOT NULL,
@@ -39,5 +45,13 @@ CREATE TABLE vendedor (
     nome_vend VARCHAR(100) NOT NULL,
     cpf VARCHAR(11) NOT NULL UNIQUE,
     cadastro DATE NOT NULL
+    loja_id INT,
     FOREIGN KEY (loja_id) REFERENCES loja(id)
 );
+
+
+INSERT INTO login (usuario, senha) VALUES ('Baunilia', 'admin123'),('Mariana','admin123');
+INSERT INTO cidade (nome_cidade) VALUES ('Bauru'),('São Paulo'),('Piratininga');
+INSERT INTO estado (uf) VALUES ('SP');
+INSERT INTO loja (nome_loja) VALUES ('Torra Torra'), ('Riachuelo'), ('Renner');
+INSERT INTO marca (nome_marca) VALUES ('Nike'), ('Adidas'), ('Puma');
