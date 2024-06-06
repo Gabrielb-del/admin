@@ -1,5 +1,5 @@
 <?php
-include("pages/superior.php");
+include ("pages/superior.php");
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
   header('Location: vendedores.php');
@@ -56,7 +56,8 @@ $conexao->close();
               <input type="hidden" name="id" value="<?php echo $id; ?>">
               <div class="mb-3">
                 <label for="nome_vend" class="form-label">Nome do Vendedor</label>
-                <input type="text" class="form-control" id="nome_vend" name="nome_vend" value="<?php echo $dados["nome_vend"]; ?>">
+                <input type="text" class="form-control" id="nome_vend" name="nome_vend"
+                  value="<?php echo $dados["nome_vend"]; ?>">
               </div>
               <div class="mb-3">
                 <label for="cpf" class="form-label">CPF do Vendedor</label>

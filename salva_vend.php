@@ -1,5 +1,5 @@
 <?php
-include("database/conectar.php");
+include ("database/conectar.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexao = new mysqli('127.0.0.1', 'root', '', 'admin');
 
     if ($conexao->connect_error) {
-        die("Conexão falhou: ". $conexao->connect_error);
+        die("Conexão falhou: " . $conexao->connect_error);
     }
 
     $sql_estado = "INSERT INTO estado (UF) VALUES (?)";
@@ -37,10 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_vendedor->bind_param("ssi", $nome, $cpf, $loja_id);
 
     if ($stmt_vendedor->execute()) {
-        header("Location: vendedor.php");  
+        header("Location: vendedor.php");
         exit();
     } else {
-        echo "Erro ao executar: ". $stmt_vendedor->error;
+        echo "Erro ao executar: " . $stmt_vendedor->error;
     }
 
     $stmt_vendedor->close();

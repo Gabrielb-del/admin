@@ -1,5 +1,5 @@
 <?php
-include("pages/superior.php");
+include ("pages/superior.php");
 
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -56,11 +56,13 @@ $conexao->close();
               <input type="hidden" name="id" value="<?php echo $id; ?>">
               <div class="mb-3">
                 <label for="nome_produto" class="form-label">Nome do Produto</label>
-                <input type="text" class="form-control" id="nome_produto" name="nome_produto" value="<?php echo $dados["nome_produto"]; ?>">
+                <input type="text" class="form-control" id="nome_produto" name="nome_produto"
+                  value="<?php echo $dados["nome_produto"]; ?>">
               </div>
               <div class="mb-3">
                 <label for="valor_produto" class="form-label">Valor do Produto</label>
-                <input type="number" class="form-control" id="valor_produto" name="valor_produto" value="<?php echo $dados["valor_produto"]; ?>">
+                <input type="number" class="form-control" id="valor_produto" name="valor_produto"
+                  value="<?php echo $dados["valor_produto"]; ?>">
               </div>
               <div class="mb-3">
                 <label for="marca" class="form-label">Marca do Produto</label>

@@ -1,5 +1,5 @@
 <?php
-include("database/conectar.php");
+include ("database/conectar.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_produto->bind_param("sss", $nome, $valor, $marca_id);
 
     if ($stmt_produto->execute()) {
-        header("Location: produtos.php");  
+        header("Location: produtos.php");
         exit();
     } else {
         echo "Erro ao executar: " . $stmt_produto->error;

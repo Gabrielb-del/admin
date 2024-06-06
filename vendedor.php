@@ -36,7 +36,7 @@ include ("pages/superior.php");
                                 <?php
                                 $conexao = new mysqli('127.0.0.1', 'root', '', 'admin');
                                 if ($conexao->connect_error) {
-                                    die("Error de conexão: ". $conexao->connect_error);
+                                    die("Error de conexão: " . $conexao->connect_error);
                                 }
                                 $sql = "SELECT v.id, v.nome_vend, v.cpf, l.nome_loja, c.nome_cidade, e.UF 
                                 FROM vendedor v 
@@ -44,28 +44,28 @@ include ("pages/superior.php");
                                 INNER JOIN cidade c ON l.cidade_id = c.id 
                                 INNER JOIN estado e ON c.estado_id = e.id";
                                 if (!$resultado = $conexao->query($sql)) {
-                                    die("Error na consulta: ". $conexao->error);
+                                    die("Error na consulta: " . $conexao->error);
                                 }
                                 if ($resultado->num_rows == 0) {
                                     echo "Não há registros na tabela vendedor";
                                 } else {
                                     while ($dados = $resultado->fetch_assoc()) {
                                         echo "<tr>
-                                    <td>". $dados["id"]. "</td>
-                                    <td>". $dados['nome_vend']. "</td>
-                                    <td>". $dados['cpf']. "</td>
-                                    <td>". $dados['nome_loja']. "</td>
-                                    <td>". $dados['nome_cidade']. "</td>
-                                    <td>". $dados['UF']. "</td>
+                                    <td>" . $dados["id"] . "</td>
+                                    <td>" . $dados['nome_vend'] . "</td>
+                                    <td>" . $dados['cpf'] . "</td>
+                                    <td>" . $dados['nome_loja'] . "</td>
+                                    <td>" . $dados['nome_cidade'] . "</td>
+                                    <td>" . $dados['UF'] . "</td>
                                     <td>
-                                        <a href='vendedor_alterar.php?id=". $dados["id"]. "' style='text-decoration:none'><i class='ri-brush-line'></i></a>
-                                        <a href='vendedor_deletar.php?id=". $dados["id"]. "' style='text-decoration:none'><i class='ri-delete-bin-line'></i></a>
+                                        <a href='vendedor_alterar.php?id=" . $dados["id"] . "' style='text-decoration:none'><i class='ri-brush-line'></i></a>
+                                        <a href='vendedor_deletar.php?id=" . $dados["id"] . "' style='text-decoration:none'><i class='ri-delete-bin-line'></i></a>
                                     </td>
                                 </tr>";
                                     }
                                 }
                                 $conexao->close();
-                              ?>
+                                ?>
                             </tbody>
                         </table>
                     </div>

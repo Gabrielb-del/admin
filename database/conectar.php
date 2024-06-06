@@ -1,7 +1,7 @@
 <?php
 
-$conexao = new mysqli("127.0.0.1", //servidor
-                        "root",         // usuario
-                        "",             //senha
+$conexao = new mysqli("127.0.0.1", 
+                        "root",         
+                        "",           
                         "admin");
 ?>
